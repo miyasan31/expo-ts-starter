@@ -1,0 +1,33 @@
+{
+	"amount": {
+		"value": 204000
+	},
+	"payment": [
+		{
+			"id": 1,
+			"userId": "1",
+			"shopId": "1",
+			"voiceId": 1,
+			"amount": 10000,
+			"createdAt": "2020-01-01T00:00:00.000Z",
+			"updatedAt": "2020-01-01T00:00:00.000Z",
+			"Shop": {
+				"id": "1",
+				"shopName": "マツモトキヨシ"
+			}
+		},
+		{
+			"id": 2,
+			"userId": "1",
+			"shopId": "1",
+			"voiceId": 1,
+			"amount": 100,
+			"createdAt": "2020-01-01T00:00:00.000Z",
+			"updatedAt": "2020-01-01T00:00:00.000Z",
+			"Shop": {
+				"id": "1",
+				"shopName": "マツモトキヨシ"
+			}
+		}
+	]
+}
