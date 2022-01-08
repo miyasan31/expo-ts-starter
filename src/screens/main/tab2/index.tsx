@@ -2,17 +2,18 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { VFC } from "react";
 import React from "react";
 import { useThemeColor } from "src/hooks";
-import { TabThreeScreen } from "src/screens/tab3";
-import type { TabThreeStackParamList } from "types";
+import type { TabTwoStackParamList } from "types";
 
-const TabThree = createNativeStackNavigator<TabThreeStackParamList>();
+import { TabTwoScreen } from "./TabTwoScreen";
 
-export const TabThreeNavigator: VFC = () => {
+const TabTwo = createNativeStackNavigator<TabTwoStackParamList>();
+
+export const TabTwoNavigator: VFC = () => {
 	const backgroundColor = useThemeColor({}, "bg1");
 
 	return (
-		<TabThree.Navigator
-			initialRouteName="TabThreeScreen"
+		<TabTwo.Navigator
+			initialRouteName="TabTwoScreen"
 			screenOptions={{
 				headerStyle: { backgroundColor: backgroundColor },
 				headerLargeTitle: true,
@@ -22,11 +23,11 @@ export const TabThreeNavigator: VFC = () => {
 				},
 			}}
 		>
-			<TabThree.Screen
-				name="TabThreeScreen"
-				component={TabThreeScreen}
+			<TabTwo.Screen
+				name="TabTwoScreen"
+				component={TabTwoScreen}
 				options={() => ({})}
 			/>
-		</TabThree.Navigator>
+		</TabTwo.Navigator>
 	);
 };

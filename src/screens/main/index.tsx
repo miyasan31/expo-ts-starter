@@ -6,11 +6,12 @@ import { StyleSheet } from "react-native";
 import { TabBarIcon } from "src/components/icon";
 import { useColorScheme } from "src/hooks";
 import { useThemeColor } from "src/hooks/useThemeColor";
-import { TabOneNavigator } from "src/navigations/tab/TabOneNavigator";
-import { TabThreeNavigator } from "src/navigations/tab/TabThreeNavigator";
-import { TabTwoNavigator } from "src/navigations/tab/TabTwoNavigator";
 import { theme } from "src/styles";
 import type { BottomTabParamList } from "types";
+
+import { TabOneNavigator } from "./tab1";
+import { TabTwoNavigator } from "./tab2";
+import { TabThreeNavigator } from "./tab3";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
