@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import type { VFC } from "react";
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
@@ -6,43 +7,29 @@ import { Text, View } from "src/components/custom";
 import { SafeAreaLayout } from "src/components/layout";
 import { useGetSWRdev, useThemeColor } from "src/hooks";
 import type { TabTwoScreenProps } from "types";
-import type { Payment } from "types/fetcher";
+import type { Post } from "types/fetcher";
 
 export const TabTwoScreen: VFC<TabTwoScreenProps<"TabTwoScreen">> = () => {
 	const color = useThemeColor({}, "text2");
-	const { data, isError, isLoading } = useGetSWRdev<Payment[]>("/payment");
+	const { data, isError, isLoading } = useGetSWRdev<Post[]>("/post");
 
-	const renderItem = ({ item }: { item: Payment }) => {
+	const renderItem = ({ item }: { item: Post }) => {
 		const onNavigation = () => {
 			console.info("item.id", item.id);
-			// props.navigation.navigate("", {
-			// 	id: item.id,
-			// });
 		};
+
+		const date = format(new Date(item.updatedAt), "yyyy年M月d日");
 
 		return (
 			<ListItem style={styles.list} onPress={onNavigation}>
-				<View style={styles.leftLayout}>
-					<Text style={styles.shopName}>{item.Shop.shopName}</Text>
+				<View>
+					<Text style={styles.shopName}>{item.title}</Text>
 					<Text
 						style={styles.date}
 						lightTextColor={color}
 						darkTextColor={color}
 					>
-						2021/12/01
-					</Text>
-				</View>
-				<View style={styles.rightLayout}>
-					<Text
-						style={styles.frequency}
-						lightTextColor={color}
-						darkTextColor={color}
-					>
-						1回払い
-					</Text>
-					<Text style={styles.price}>
-						<Text style={styles.yensign}>¥</Text>
-						{item.amount}
+						{date}
 					</Text>
 				</View>
 			</ListItem>
@@ -57,28 +44,18 @@ export const TabTwoScreen: VFC<TabTwoScreenProps<"TabTwoScreen">> = () => {
 				<Text>エラーが発生しました</Text>
 			) : !data ? (
 				<Text>データがありません</Text>
-			) : data ? (
+			) : (
 				<FlatList
 					data={data}
 					renderItem={renderItem}
 					keyExtractor={(item, _) => String(item.id)}
 				/>
-			) : null}
+			)}
 		</SafeAreaLayout>
 	);
 };
 
 const styles = StyleSheet.create({
-	header: {
-		alignItems: "center",
-		justifyContent: "center",
-
-		height: 60,
-		width: "100%",
-
-		borderBottomWidth: 1,
-		borderBottomColor: "#b3b3b333",
-	},
 	list: {
 		flex: 1,
 		flexDirection: "row",
@@ -90,12 +67,6 @@ const styles = StyleSheet.create({
 		borderBottomWidth: 1,
 		borderBottomColor: "#88888833",
 	},
-
-	leftLayout: {},
-	rightLayout: {
-		justifyContent: "flex-end",
-	},
-
 	shopName: {
 		paddingBottom: 10,
 
@@ -107,18 +78,5 @@ const styles = StyleSheet.create({
 		fontSize: 15,
 		fontWeight: "normal",
 		textAlign: "left",
-	},
-	frequency: {
-		fontSize: 15,
-		textAlign: "right",
-		fontWeight: "normal",
-	},
-	price: {
-		fontSize: 20,
-		fontWeight: "600",
-	},
-	yensign: {
-		fontSize: 24,
-		fontWeight: "300",
 	},
 });

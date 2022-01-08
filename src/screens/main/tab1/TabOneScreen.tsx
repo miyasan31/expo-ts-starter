@@ -5,13 +5,10 @@ import { Text } from "src/components/custom";
 import { Layout } from "src/components/layout";
 import { useGetSWRdev } from "src/hooks";
 import type { TabOneScreenProps } from "types";
-
-type Amount = {
-	value: number;
-};
+import type { User } from "types/fetcher";
 
 export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
-	const { data, isError, isLoading } = useGetSWRdev<Amount>("/amount");
+	const { data, isError, isLoading } = useGetSWRdev<User>("/user/1");
 
 	return (
 		<Layout>
@@ -19,10 +16,13 @@ export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
 				<Progress />
 			) : isError ? (
 				<Text>Error</Text>
+			) : !data ? (
+				<Text>データがありません</Text>
 			) : (
 				<>
-					<Text>今月の利用可能額は</Text>
-					<Text>{data?.value}</Text>
+					<Text>{data.id}</Text>
+					<Text>{data.name}</Text>
+					<Text>{data.age}</Text>
 				</>
 			)}
 		</Layout>
