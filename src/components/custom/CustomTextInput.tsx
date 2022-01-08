@@ -16,6 +16,7 @@ export const CustomTextInput: VFC<TextInputProps> = memo((props) => {
 		lightBgColor,
 		darkBgColor,
 		bgStyle,
+		secureTextEntry = false,
 		...otherProps
 	} = props;
 
@@ -34,7 +35,11 @@ export const CustomTextInput: VFC<TextInputProps> = memo((props) => {
 			lightBgColor={backgroundColor}
 			darkBgColor={backgroundColor}
 		>
-			<NativeTextInput style={[textStyle, { color }]} {...otherProps} />
+			<NativeTextInput
+				style={[textStyle, { color }]}
+				{...otherProps}
+				secureTextEntry={secureTextEntry}
+			/>
 		</View>
 	);
 });
