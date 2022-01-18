@@ -1,6 +1,5 @@
 node_modules
 yarn.lock
-package-lock.json
 app.json
 public
 renovate.json
@@ -11,14 +10,14 @@ LICENSE.md
 README.md
 .expo
 .expo-shared
+.babelrc.js
 .github
 .gitignore
-.eslintrc
+.prettierrc.js
+.prettierignore
+.eslintrc.js
 .eslintignore
 .env.*
-.babelrc
-.prettierrc
-.prettierignore
 
 
 
