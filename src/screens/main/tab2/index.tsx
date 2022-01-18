@@ -9,25 +9,21 @@ import { TabTwoScreen } from "./TabTwoScreen";
 const TabTwo = createNativeStackNavigator<TabTwoStackParamList>();
 
 export const TabTwoNavigator: VFC = () => {
-	const backgroundColor = useThemeColor({}, "bg1");
+  const backgroundColor = useThemeColor({}, "bg1");
 
-	return (
-		<TabTwo.Navigator
-			initialRouteName="TabTwoScreen"
-			screenOptions={{
-				headerStyle: { backgroundColor: backgroundColor },
-				headerLargeTitle: true,
-				headerLargeTitleStyle: {
-					fontWeight: "400",
-					fontSize: 30,
-				},
-			}}
-		>
-			<TabTwo.Screen
-				name="TabTwoScreen"
-				component={TabTwoScreen}
-				options={() => ({})}
-			/>
-		</TabTwo.Navigator>
-	);
+  return (
+    <TabTwo.Navigator
+      initialRouteName="TabTwoScreen"
+      screenOptions={{
+        headerStyle: { backgroundColor: backgroundColor },
+        headerLargeTitle: true,
+        headerLargeTitleStyle: {
+          fontWeight: "400",
+          fontSize: 30,
+        },
+      }}
+    >
+      <TabTwo.Screen name="TabTwoScreen" component={TabTwoScreen} options={() => ({})} />
+    </TabTwo.Navigator>
+  );
 };

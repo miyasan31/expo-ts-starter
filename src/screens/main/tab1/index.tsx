@@ -9,25 +9,21 @@ import { TabOneScreen } from "./TabOneScreen";
 const TabOne = createNativeStackNavigator<TabOneStackParamList>();
 
 export const TabOneNavigator: VFC = () => {
-	const backgroundColor = useThemeColor({}, "bg1");
+  const backgroundColor = useThemeColor({}, "bg1");
 
-	return (
-		<TabOne.Navigator
-			initialRouteName="TabOneScreen"
-			screenOptions={{
-				headerStyle: { backgroundColor: backgroundColor },
-				headerLargeTitle: true,
-				headerLargeTitleStyle: {
-					fontWeight: "400",
-					fontSize: 30,
-				},
-			}}
-		>
-			<TabOne.Screen
-				name="TabOneScreen"
-				component={TabOneScreen}
-				options={() => ({})}
-			/>
-		</TabOne.Navigator>
-	);
+  return (
+    <TabOne.Navigator
+      initialRouteName="TabOneScreen"
+      screenOptions={{
+        headerStyle: { backgroundColor: backgroundColor },
+        headerLargeTitle: true,
+        headerLargeTitleStyle: {
+          fontWeight: "400",
+          fontSize: 30,
+        },
+      }}
+    >
+      <TabOne.Screen name="TabOneScreen" component={TabOneScreen} options={() => ({})} />
+    </TabOne.Navigator>
+  );
 };

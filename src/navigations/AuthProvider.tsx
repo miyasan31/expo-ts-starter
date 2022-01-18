@@ -3,25 +3,25 @@ import React, { useCallback, useEffect, useState } from "react";
 import { Progress } from "src/components";
 
 type Props = {
-	children: ReactNode;
+  children: ReactNode;
 };
 
 export const AuthProvider: VFC<Props> = (props) => {
-	const [isLoading, seIsLoading] = useState(true);
+  const [isLoading, seIsLoading] = useState(true);
 
-	const loadingFalse = useCallback(async () => {
-		await new Promise((resolve) => setTimeout(resolve, 500));
-		seIsLoading(false);
-	}, []);
+  const loadingFalse = useCallback(async () => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    seIsLoading(false);
+  }, []);
 
-	useEffect(() => {
-		if (!isLoading) seIsLoading(true);
-		loadingFalse();
-	}, []);
+  useEffect(() => {
+    if (!isLoading) seIsLoading(true);
+    loadingFalse();
+  }, []);
 
-	if (isLoading) {
-		return <Progress />;
-	} else {
-		return <>{props.children}</>;
-	}
+  if (isLoading) {
+    return <Progress />;
+  } else {
+    return <>{props.children}</>;
+  }
 };

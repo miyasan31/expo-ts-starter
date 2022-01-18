@@ -16,51 +16,43 @@ import { TabThreeNavigator } from "./tab3";
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
 export const BottomTabNavigator: VFC = () => {
-	const colorScheme = useColorScheme();
-	const bg1 = useThemeColor({}, "bg1");
+  const colorScheme = useColorScheme();
+  const bg1 = useThemeColor({}, "bg1");
 
-	return (
-		<BottomTab.Navigator
-			initialRouteName="TabOne"
-			screenOptions={{
-				headerShown: false,
-				tabBarActiveTintColor: theme[colorScheme].primary,
-				tabBarStyle: { position: "absolute", backgroundColor: bg1 },
-				tabBarBackground: () => (
-					<BlurView intensity={10} style={StyleSheet.absoluteFill} />
-				),
-			}}
-		>
-			<BottomTab.Screen
-				name="TabOne"
-				component={TabOneNavigator}
-				options={{
-					tabBarLabel: "TabOne",
-					tabBarIcon: ({ color }) => (
-						<TabBarIcon name="home-outline" color={color} />
-					),
-				}}
-			/>
-			<BottomTab.Screen
-				name="TabTwo"
-				component={TabTwoNavigator}
-				options={() => ({
-					title: "TabTwo",
-					tabBarIcon: ({ color }) => (
-						<TabBarIcon name="list-outline" color={color} />
-					),
-				})}
-			/>
-			<BottomTab.Screen
-				name="TabThree"
-				component={TabThreeNavigator}
-				options={() => ({
-					title: "TabThree",
-					tabBarIcon: ({ color }) => (
-						<TabBarIcon name="settings-outline" color={color} />
-					),
-				})}
-			/>
-		</BottomTab.Navigator>
-	);
+  return (
+    <BottomTab.Navigator
+      initialRouteName="TabOne"
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: theme[colorScheme].primary,
+        tabBarStyle: { position: "absolute", backgroundColor: bg1 },
+        tabBarBackground: () => <BlurView intensity={10} style={StyleSheet.absoluteFill} />,
+      }}
+    >
+      <BottomTab.Screen
+        name="TabOne"
+        component={TabOneNavigator}
+        options={{
+          tabBarLabel: "TabOne",
+          tabBarIcon: ({ color }) => <TabBarIcon name="home-outline" color={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="TabTwo"
+        component={TabTwoNavigator}
+        options={() => ({
+          title: "TabTwo",
+          tabBarIcon: ({ color }) => <TabBarIcon name="list-outline" color={color} />,
+        })}
+      />
+      <BottomTab.Screen
+        name="TabThree"
+        component={TabThreeNavigator}
+        options={() => ({
+          title: "TabThree",
+          tabBarIcon: ({ color }) => <TabBarIcon name="settings-outline" color={color} />,
+        })}
+      />
+    </BottomTab.Navigator>
+  );
 };
