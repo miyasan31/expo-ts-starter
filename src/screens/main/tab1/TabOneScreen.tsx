@@ -1,30 +1,59 @@
 import type { VFC } from "react";
-import React from "react";
-import { Progress } from "src/components";
-import { Text } from "src/components/custom";
-import { Layout } from "src/components/layout";
-import { useGetSWRdev } from "src/hooks";
+import React, { useState } from "react";
+import { Text, useWindowDimensions, View } from "react-native";
+import { SceneMap, TabView } from "react-native-tab-view";
 import type { TabOneScreenProps } from "types";
-import type { User } from "types/fetcher";
+
+const FirstRoute = () => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#ff0055",
+      }}
+    >
+      <Text>First</Text>
+    </View>
+  );
+};
+
+const SecondRoute = () => {
+  return (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#6200ff",
+      }}
+    >
+      <Text>First</Text>
+    </View>
+  );
+};
+
+const renderScene = SceneMap({
+  first: FirstRoute,
+  second: SecondRoute,
+});
 
 export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
-  const { data, isError, isLoading } = useGetSWRdev<User>("/user/1");
+  const layout = useWindowDimensions();
+  const [routes] = useState([
+    { key: "first", title: "First" },
+    { key: "second", title: "Second" },
+  ]);
+  const [index, setIndex] = useState(0);
 
   return (
-    <Layout>
-      {isLoading ? (
-        <Progress />
-      ) : isError ? (
-        <Text>Error</Text>
-      ) : !data ? (
-        <Text>データがありません</Text>
-      ) : (
-        <>
-          <Text>{data.id}</Text>
-          <Text>{data.name}</Text>
-          <Text>{data.age}</Text>
-        </>
-      )}
-    </Layout>
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      // eslint-disable-next-line react/jsx-handler-names
+      onIndexChange={setIndex}
+      initialLayout={{ width: layout.width }}
+    />
   );
 };
