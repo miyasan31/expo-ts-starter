@@ -1,58 +1,80 @@
 import type { VFC } from "react";
 import React, { useState } from "react";
-import { Text, useWindowDimensions, View } from "react-native";
-import { SceneMap, TabView } from "react-native-tab-view";
+import { useWindowDimensions, View } from "react-native";
+import type { NavigationState, SceneRendererProps } from "react-native-tab-view";
+import { SceneMap, TabBar, TabView } from "react-native-tab-view";
+import { Text } from "src/components/custom";
 import type { TabOneScreenProps } from "types";
 
-const FirstRoute = () => {
+const VirtualRoute = () => {
   return (
     <View
       style={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#ff0055",
       }}
     >
-      <Text>First</Text>
+      <Text>virtual</Text>
     </View>
   );
 };
 
-const SecondRoute = () => {
+const ChallengeRoute = () => {
   return (
     <View
       style={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#6200ff",
       }}
     >
-      <Text>First</Text>
+      <Text>challenge</Text>
     </View>
   );
 };
 
 const renderScene = SceneMap({
-  first: FirstRoute,
-  second: SecondRoute,
+  virtual: VirtualRoute,
+  challenge: ChallengeRoute,
 });
+
+type TabBarProps = SceneRendererProps & {
+  navigationState: NavigationState<{
+    key: string;
+    title: string;
+  }>;
+};
+
+const renderTabBar = (props: TabBarProps) => (
+  <TabBar
+    {...props}
+    activeColor={"#ff6726"}
+    inactiveColor={"#d3d3d3"}
+    style={{ backgroundColor: "#fff" }}
+    indicatorStyle={{ backgroundColor: "#ff6726", height: 3 }}
+  />
+);
 
 export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
   const layout = useWindowDimensions();
   const [routes] = useState([
-    { key: "first", title: "First" },
-    { key: "second", title: "Second" },
+    { key: "virtual", title: "ヴァーチャル大会一覧" },
+    { key: "challenge", title: "チャレンジ中の大会" },
   ]);
   const [index, setIndex] = useState(0);
 
+  const onIndexChange = (index: number) => {
+    setIndex(index);
+  };
+
   return (
     <TabView
+      renderTabBar={renderTabBar}
       navigationState={{ index, routes }}
       renderScene={renderScene}
-      // eslint-disable-next-line react/jsx-handler-names
-      onIndexChange={setIndex}
+      tabBarPosition="top"
+      onIndexChange={onIndexChange}
       initialLayout={{ width: layout.width }}
     />
   );
