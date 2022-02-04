@@ -1,6 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import type { ReactNode, VFC } from "react";
 import React from "react";
+
 import type { SafeAreaViewProps } from "~/components/custom";
 import { SafeAreaView } from "~/components/custom";
 import { KeyboardAvoiding } from "~/components/layout/KeyboardAvoiding";

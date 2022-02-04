@@ -1,6 +1,7 @@
 import type { ReactNode, VFC } from "react";
 import React from "react";
 import { KeyboardAvoidingView, Platform, TouchableWithoutFeedback } from "react-native";
+
 import { onKeyBoardClose } from "~/functions";
 import { viewStyles } from "~/styles";
 
