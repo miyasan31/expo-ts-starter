@@ -2,12 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RecoilRoot } from "recoil";
+import { SWRConfig } from "swr";
+
 import { Toaster } from "~/components/Toaster";
 import { getFetcher } from "~/functions/fetcher";
 import { useCachedResources } from "~/hooks/useCachedResources";
 import { useColorScheme } from "~/hooks/useColorScheme";
 import { Navigations } from "~/navigations";
-import { SWRConfig } from "swr";
 
 const App = () => {
   const isLoadingComplete = useCachedResources();
