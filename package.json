@@ -8,8 +8,9 @@
 		"web": "expo start --web",
 		"eject": "expo eject",
 		"test": "jest --watchAll",
-		"eslint": "eslint .",
 		"tsc": "tsc --noEmit",
+		"eslint": "eslint .",
+		"prettier": "prettier --check .",
 		"dev:api": "json-server --watch mock/json-server.json --port 5000"
 	},
 	"jest": {
