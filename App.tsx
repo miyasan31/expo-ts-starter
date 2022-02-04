@@ -5,7 +5,7 @@ import { RecoilRoot } from "recoil";
 import { SWRConfig } from "swr";
 
 import { Toaster } from "~/components/Toaster";
-import { getFetcher } from "~/functions/fetcher";
+import { getFetcher } from "~/functions/fetcher/unfetch";
 import { useCachedResources } from "~/hooks/useCachedResources";
 import { useColorScheme } from "~/hooks/useColorScheme";
 import { Navigations } from "~/navigations";
