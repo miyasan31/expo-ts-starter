@@ -1,4 +1,2 @@
-import { ModalScreen } from "./ModalScreen";
-import { NotFoundScreen } from "./NotFoundScreen";
-
-export { ModalScreen, NotFoundScreen };
+export { ModalScreen } from "./ModalScreen";
+export { NotFoundScreen } from "./NotFoundScreen";

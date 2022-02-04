@@ -2,6 +2,7 @@ import type { VFC } from "react";
 import React from "react";
 import { StyleSheet } from "react-native";
 import * as RNProgress from "react-native-progress";
+
 import { View } from "~/components/custom";
 import { useThemeColor } from "~/hooks/useThemeColor";
 

@@ -2,6 +2,7 @@ import { DarkTheme, DefaultTheme, NavigationContainer } from "@react-navigation/
 import type { VFC } from "react";
 import React, { useMemo } from "react";
 import type { ColorSchemeName } from "react-native";
+
 import { AuthProvider } from "~/navigations/AuthProvider";
 import { LinkingConfiguration } from "~/navigations/LinkingConfiguration";
 import { RootNavigator } from "~/navigations/RootNavigator";
