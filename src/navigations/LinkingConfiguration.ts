@@ -7,18 +7,29 @@ export const LinkingConfiguration: LinkingOptions<RootStackParamList> = {
   prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
-      // Pay: {
-      // 	path: "pay",
-      // 	screens: {
-      // 		VoiceRecord: {
-      // 			path: "voice_record/:price",
-      // 		},
-      // 		Passcode: {
-      // 			path: "passcode/:price",
-      // 		},
-      // 	},
-      // },
-
+      Main: {
+        path: "main",
+        screens: {
+          TabOne: {
+            path: "tab1",
+            screens: {
+              TabOneScreen: "tab1",
+            },
+          },
+          TabTwo: {
+            path: "tab2",
+            screens: {
+              TabTwoScreen: "tab2",
+            },
+          },
+          TabThree: {
+            path: "tab3",
+            screens: {
+              TabThreeScreen: "tab3",
+            },
+          },
+        },
+      },
       Modal: "modal",
       NotFound: "*",
     },
