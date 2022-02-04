@@ -9,7 +9,7 @@ declare global {
 }
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<BottomTabScreenProps> | undefined;
+  Main: NavigatorScreenParams<BottomTabScreenProps> | undefined;
   Modal: undefined;
   NotFound: undefined;
 };
