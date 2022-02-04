@@ -5,9 +5,9 @@ import React from "react";
 import { StyleSheet } from "react-native";
 
 import { TabBarIcon } from "~/components/icon";
+import { THEME } from "~/constants";
 import { useColorScheme } from "~/hooks";
 import { useThemeColor } from "~/hooks/useThemeColor";
-import { theme } from "~/styles";
 import type { BottomTabParamList } from "~/types";
 
 import { TabOneNavigator } from "./tab1";
@@ -25,7 +25,7 @@ export const BottomTabNavigator: VFC = () => {
       initialRouteName="TabOne"
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: theme[colorScheme].primary,
+        tabBarActiveTintColor: THEME[colorScheme].primary,
         tabBarStyle: { position: "absolute", backgroundColor: bg1 },
         tabBarBackground: () => <BlurView intensity={10} style={StyleSheet.absoluteFill} />,
       }}

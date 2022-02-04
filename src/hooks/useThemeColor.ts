@@ -1,12 +1,12 @@
-import { theme } from "~/styles";
+import { THEME } from "~/constants";
 
 import { useColorScheme } from "./useColorScheme";
 
 export const useThemeColor = (
   themeProps: { light?: string; dark?: string },
-  themeName: keyof typeof theme.light & keyof typeof theme.dark,
+  themeName: keyof typeof THEME.light & keyof typeof THEME.dark,
 ) => {
   const themeColor = useColorScheme();
   const colorFromProps = themeProps[themeColor];
-  return colorFromProps || theme[themeColor][themeName];
+  return colorFromProps || THEME[themeColor][themeName];
 };

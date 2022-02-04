@@ -5,7 +5,7 @@ const primaryDark = "#00cba6";
 const accentLight = "#ff7575";
 const accentDark = "#ff7575";
 
-export const theme = {
+export const THEME = {
   light: {
     text1: "#444",
     text2: "#777",
