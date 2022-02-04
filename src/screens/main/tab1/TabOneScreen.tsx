@@ -3,7 +3,7 @@ import React from "react";
 
 import { Progress } from "~/components";
 import { Text } from "~/components/custom";
-import { Layout } from "~/components/layout";
+import { MainLayout } from "~/components/layout";
 import { useGetSWRdev } from "~/hooks";
 import type { TabOneScreenProps } from "~/types";
 import type { User } from "~/types/fetcher";
@@ -12,7 +12,7 @@ export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
   const { data, isError, isLoading } = useGetSWRdev<User>("/user/1");
 
   return (
-    <Layout>
+    <MainLayout>
       {isLoading ? (
         <Progress />
       ) : isError ? (
@@ -26,6 +26,6 @@ export const TabOneScreen: VFC<TabOneScreenProps<"TabOneScreen">> = () => {
           <Text>{data.age}</Text>
         </>
       )}
-    </Layout>
+    </MainLayout>
   );
 };

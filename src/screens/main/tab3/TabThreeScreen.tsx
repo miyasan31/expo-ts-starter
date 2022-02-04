@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native";
 
 import { ListItem } from "~/components";
 import { Text, View } from "~/components/custom";
-import { Layout } from "~/components/layout";
+import { MainLayout } from "~/components/layout";
 import { useThemeColor } from "~/hooks";
 import type { TabThreeScreenProps } from "~/types";
 
@@ -30,7 +30,7 @@ export const TabThreeScreen: VFC<TabThreeScreenProps<"TabThreeScreen">> = () => 
   }, []);
 
   return (
-    <Layout style={styles.full}>
+    <MainLayout style={styles.full}>
       {data.map((item) => {
         return (
           <ListItem key={item.id} style={styles.list} onPress={() => onNavigation(item.screen)}>
@@ -49,7 +49,7 @@ export const TabThreeScreen: VFC<TabThreeScreenProps<"TabThreeScreen">> = () => 
           </Text>
         </View>
       </ListItem>
-    </Layout>
+    </MainLayout>
   );
 };
 

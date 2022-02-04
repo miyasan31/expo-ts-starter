@@ -4,7 +4,7 @@ import React from "react";
 
 import type { SafeAreaViewProps } from "~/components/custom";
 import { SafeAreaView } from "~/components/custom";
-import { KeyboardAvoiding } from "~/components/layout/KeyboardAvoiding";
+import { KeyboardAvoidingLayout } from "~/components/layout";
 import { useThemeColor } from "~/hooks";
 
 type Props = SafeAreaViewProps & {
@@ -17,9 +17,9 @@ export const SafeAreaLayout: VFC<Props> = (props) => {
   const backgroundColor = useThemeColor({ light: lightBgColor, dark: darkBgColor }, "bg1");
 
   return (
-    <KeyboardAvoiding>
+    <KeyboardAvoidingLayout>
       <SafeAreaView style={[style, { backgroundColor }]}>{children}</SafeAreaView>
-    </KeyboardAvoiding>
+    </KeyboardAvoidingLayout>
   );
 };
 

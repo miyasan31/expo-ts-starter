@@ -9,7 +9,7 @@ type Props = {
   children: ReactNode;
 };
 
-export const KeyboardAvoiding: VFC<Props> = (props) => {
+export const KeyboardAvoidingLayout: VFC<Props> = (props) => {
   return (
     <TouchableWithoutFeedback onPress={onKeyBoardClose}>
       <KeyboardAvoidingView
