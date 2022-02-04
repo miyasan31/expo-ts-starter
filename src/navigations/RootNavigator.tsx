@@ -12,9 +12,9 @@ const RootStack = createNativeStackNavigator<RootStackParamList>();
 export const RootNavigator = () => {
   const backgroundColor = useThemeColor({}, "bg1");
   return (
-    <RootStack.Navigator initialRouteName="Root">
+    <RootStack.Navigator initialRouteName="Main">
       <RootStack.Screen
-        name="Root"
+        name="Main"
         component={BottomTabNavigator}
         options={{
           headerShown: false,
