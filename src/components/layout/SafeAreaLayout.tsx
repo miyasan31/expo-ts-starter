@@ -4,8 +4,9 @@ import React from "react";
 
 import type { SafeAreaViewProps } from "~/components/custom";
 import { SafeAreaView } from "~/components/custom";
-import { KeyboardAvoidingLayout } from "~/components/layout";
 import { useThemeColor } from "~/hooks";
+
+import { KeyboardAvoidingLayout } from "./KeyboardAvoidingLayout";
 
 type Props = SafeAreaViewProps & {
   children: ReactNode;

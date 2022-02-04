@@ -6,8 +6,9 @@ import { StyleSheet } from "react-native";
 
 import type { ViewProps } from "~/components/custom";
 import { View } from "~/components/custom";
-import { KeyboardAvoidingLayout } from "~/components/layout";
 import { useThemeColor } from "~/hooks";
+
+import { KeyboardAvoidingLayout } from "./KeyboardAvoidingLayout";
 
 type Props = ViewProps & {
   children: ReactNode;
