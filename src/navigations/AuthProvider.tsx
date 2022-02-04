@@ -1,6 +1,6 @@
 import type { ReactNode, VFC } from "react";
 import React, { useCallback, useEffect, useState } from "react";
-import { Progress } from "src/components";
+import { Progress } from "~/components";
 
 type Props = {
   children: ReactNode;

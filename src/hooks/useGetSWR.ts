@@ -1,5 +1,6 @@
-import { getFetcherWithToken } from "src/functions/fetcher";
 import useSWR from "swr";
+
+import { getFetcherWithToken } from "~/functions/fetcher";
 
 export const useGetSWR = <T>(url: string) => {
   const { data, error } = useSWR<T>(url);

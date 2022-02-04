@@ -1,7 +1,8 @@
 import type { VFC } from "react";
 import React, { useCallback } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import type { StackScreenProps } from "types";
+
+import type { StackScreenProps } from "~/types";
 
 export const NotFoundScreen: VFC<StackScreenProps<"NotFound">> = (props) => {
   const onRootScreenPush = useCallback(() => {

@@ -2,11 +2,12 @@ import { MaterialIcons } from "@expo/vector-icons";
 import type { VFC } from "react";
 import React, { useCallback } from "react";
 import { StyleSheet } from "react-native";
-import { ListItem } from "src/components";
-import { Text, View } from "src/components/custom";
-import { Layout } from "src/components/layout";
-import { useThemeColor } from "src/hooks";
-import type { TabThreeScreenProps } from "types";
+
+import { ListItem } from "~/components";
+import { Text, View } from "~/components/custom";
+import { Layout } from "~/components/layout";
+import { useThemeColor } from "~/hooks";
+import type { TabThreeScreenProps } from "~/types";
 
 type List = {
   id: string;

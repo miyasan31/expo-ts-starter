@@ -2,11 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RecoilRoot } from "recoil";
-import { Toaster } from "src/components/Toaster";
-import { getFetcher } from "src/functions/fetcher";
-import { useCachedResources } from "src/hooks/useCachedResources";
-import { useColorScheme } from "src/hooks/useColorScheme";
-import { Navigations } from "src/navigations";
+import { Toaster } from "~/components/Toaster";
+import { getFetcher } from "~/functions/fetcher";
+import { useCachedResources } from "~/hooks/useCachedResources";
+import { useColorScheme } from "~/hooks/useColorScheme";
+import { Navigations } from "~/navigations";
 import { SWRConfig } from "swr";
 
 const App = () => {

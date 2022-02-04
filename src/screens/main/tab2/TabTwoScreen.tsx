@@ -2,12 +2,13 @@ import { format } from "date-fns";
 import type { VFC } from "react";
 import React from "react";
 import { FlatList, StyleSheet } from "react-native";
-import { ListItem, Progress } from "src/components";
-import { Text, View } from "src/components/custom";
-import { SafeAreaLayout } from "src/components/layout";
-import { useGetSWRdev, useThemeColor } from "src/hooks";
-import type { TabTwoScreenProps } from "types";
-import type { Post } from "types/fetcher";
+
+import { ListItem, Progress } from "~/components";
+import { Text, View } from "~/components/custom";
+import { SafeAreaLayout } from "~/components/layout";
+import { useGetSWRdev, useThemeColor } from "~/hooks";
+import type { TabTwoScreenProps } from "~/types";
+import type { Post } from "~/types/fetcher";
 
 export const TabTwoScreen: VFC<TabTwoScreenProps<"TabTwoScreen">> = () => {
   const color = useThemeColor({}, "text2");
