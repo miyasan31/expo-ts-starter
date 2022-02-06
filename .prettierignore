@@ -1,6 +1,6 @@
 # npm
 **/node_modules/*
-package.json
+# package.json
 package-lock.json
 yarn.lock
 
@@ -8,32 +8,32 @@ yarn.lock
 **/.expo/*
 **/.expo-shared/*
 assets
-app.json
+# app.json
 
 # git, github
-.github
-.gitignore
+# .github
+# .gitignore
 
 # typescript
-tsconfig.json
+# tsconfig.json
 
 # babel
-.babelrc.js
+# .babelrc.js
 
 # eslint
-.eslintrc.js
-.eslintignore
+# .eslintrc.js
+# .eslintignore
 
 # prettiier
-.prettierrc.js
-.prettierignore
+# .prettierrc.js
+# .prettierignore
 
 # .env
-.env.*
+# .env.*
 
-# docs
-LICENSE.md
-README.md
+# # docs
+# LICENSE.md
+# README.md
 
 # renovate
-renovate.json
+# renovate.json
