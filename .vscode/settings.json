@@ -11,7 +11,7 @@
   "files.eol": "\n",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.tsdk": "node_modules/typescript/lib",
-  "prettier.printWidth": 80,
+  "prettier.printWidth": 120,
   "explorer.sortOrderLexicographicOptions": "unicode",
   "explorer.sortOrder": "type",
   "path-autocomplete.pathMappings": {
