@@ -6,7 +6,7 @@ import type { StackScreenProps } from "~/types";
 
 export const NotFoundScreen: VFC<StackScreenProps<"NotFound">> = (props) => {
   const onRootScreenPush = useCallback(() => {
-    props.navigation.replace("Root");
+    props.navigation.replace("Main");
   }, [props.navigation]);
 
   return (
