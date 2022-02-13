@@ -1,4 +1,4 @@
-export { buttonStyles } from "./button.styles";
-export { textStyles } from "./text.styles";
-export { textInputStyles } from "./textInput.styles";
-export { viewStyles } from "./view.styles";
+export { buttonStyles } from "./button";
+export { textStyles } from "./text";
+export { textInputStyles } from "./textInput";
+export { viewStyles } from "./view";
