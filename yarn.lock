@@ -8465,6 +8465,11 @@ rimraf@~2.6.2:
   dependencies:
     glob "^7.1.3"
 
+rn-bounceable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rn-bounceable/-/rn-bounceable-1.1.0.tgz#85717f999168cda3cb264ea0479e9b97ee842ff1"
+  integrity sha512-JZmMjL9bc3y0HAP8yLQ3EooGVI/NrN620BbfSbrB8wVwJMWBXYDP9BxPFkIUJd0PE9UVdGhk7zg69mAnMGMaNw==
+
 rsvp@^4.8.4:
   version "4.8.5"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.5.tgz#c8f155311d167f68f21e168df71ec5b083113734"
