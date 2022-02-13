@@ -4,10 +4,10 @@ import type { VFC } from "react";
 import React from "react";
 import { StyleSheet } from "react-native";
 
-import { TabBarIcon } from "~/components/icon";
-import { THEME } from "~/constants";
-import { useColorScheme } from "~/hooks";
+import { TabBarIcon } from "~/components/ui/TabBarIcon";
+import { useColorScheme } from "~/hooks/useColorScheme";
 import { useThemeColor } from "~/hooks/useThemeColor";
+import { theme } from "~/styles/theme";
 import type { BottomTabParamList } from "~/types";
 
 import { TabOneNavigator } from "./tab1";
@@ -25,7 +25,7 @@ export const BottomTabNavigator: VFC = () => {
       initialRouteName="TabOne"
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: THEME[colorScheme].primary,
+        tabBarActiveTintColor: theme[colorScheme].primary,
         tabBarStyle: { position: "absolute", backgroundColor: bg1 },
         tabBarBackground: () => <BlurView intensity={10} style={StyleSheet.absoluteFill} />,
       }}

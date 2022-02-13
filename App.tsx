@@ -4,11 +4,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { RecoilRoot } from "recoil";
 import { SWRConfig } from "swr";
 
-import { Toaster } from "~/components/Toaster";
-import { getFetcher } from "~/functions/fetcher/unfetch";
+import { Toaster } from "~/components/ui/Toaster";
 import { useCachedResources } from "~/hooks/useCachedResources";
 import { useColorScheme } from "~/hooks/useColorScheme";
-import { Navigations } from "~/navigations";
+import { Navigations } from "~/screens";
+import { getFetcher } from "~/utils/fetcher/unfetch";
 
 const App = () => {
   const isLoadingComplete = useCachedResources();

@@ -1,6 +1,6 @@
 import useSWR from "swr";
 
-import { getFetcherWithToken } from "~/functions/fetcher/unfetch";
+import { getFetcherWithToken } from "~/utils/fetcher/unfetch";
 
 export const useGetSWR = <T>(url: string) => {
   const { data, error } = useSWR<T>(url);
