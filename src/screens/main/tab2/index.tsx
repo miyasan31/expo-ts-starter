@@ -2,10 +2,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { VFC } from "react";
 import React from "react";
 
-import { useThemeColor } from "~/hooks";
+import { useThemeColor } from "~/hooks/useThemeColor";
 import type { TabTwoStackParamList } from "~/types";
 
-import { TabTwoScreen } from "./TabTwoScreen";
+import { TabTwoScreen } from "./tab_two.screen";
 
 const TabTwo = createNativeStackNavigator<TabTwoStackParamList>();
 
