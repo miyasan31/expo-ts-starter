@@ -14,6 +14,7 @@ export const linkingConfiguration: LinkingOptions<RootStackParamList> = {
             path: "tab1",
             screens: {
               TabOneScreen: "tab1",
+              Modal: "modal",
             },
           },
           TabTwo: {
@@ -30,8 +31,10 @@ export const linkingConfiguration: LinkingOptions<RootStackParamList> = {
           },
         },
       },
-      Modal: "modal",
-      NotFound: "*",
+      Modal: {
+        path: "modal",
+      },
+      NotFoundScreen: "*",
     },
   },
 };
