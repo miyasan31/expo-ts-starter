@@ -4,8 +4,8 @@ import React, { useMemo } from "react";
 import type { ColorSchemeName } from "react-native";
 
 import { AuthProvider } from "~/navigations/AuthProvider";
-import { LinkingConfiguration } from "~/navigations/LinkingConfiguration";
 import { RootNavigator } from "~/navigations/RootNavigator";
+import { linkingConfiguration } from "~/utils/linkingConfiguration";
 
 export const Navigations: VFC<{ colorScheme: ColorSchemeName }> = (props) => {
   const themeResult = useMemo(() => {
@@ -13,7 +13,7 @@ export const Navigations: VFC<{ colorScheme: ColorSchemeName }> = (props) => {
   }, [props]);
 
   return (
-    <NavigationContainer linking={LinkingConfiguration} theme={themeResult}>
+    <NavigationContainer linking={linkingConfiguration} theme={themeResult}>
       <AuthProvider>
         <RootNavigator />
       </AuthProvider>
